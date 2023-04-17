@@ -14,6 +14,8 @@ function App() {
     } else {
       document.documentElement.classList.add('dark')
       setIsDarModeActive(true)
+      // is use pass custom value for darmode use can use
+      // document.querySelector(':root').style.setProperty('--darModeColor', customColorValue);
     }
   }
 

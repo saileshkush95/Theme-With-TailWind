@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark {
-    background-color: rgb(26 26 26);
-    color: white;
+:root {
+    --darModeColor: rgb(26 26 26);
+    --primary: orange;
 }
 
-:root {
-    --primary: orange;
+.dark {
+    background-color: var(--darModeColor);
+    color: white;
 }
