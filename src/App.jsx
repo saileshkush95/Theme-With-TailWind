@@ -1,45 +1,29 @@
 import { useState } from "react";
-import { classNames } from "./utils/classNames";
+import {classNames} from "./utils/classNames"
 
 function App() {
 
-  const [isDarModeActive, setIsDarModeActive] = useState(false)
+  const [isDarModeActive, setIsDarModeActive] = useState(true)
   const [openSidebar, setOpenSidebar] = useState(true)
-
-
   const handleDarkModeSelection = () => {
     // use can also use user input value
     if (isDarModeActive) {
-      document.documentElement.classNameList.remove('dark')
+      document.documentElement.classList.remove('dark')
       setIsDarModeActive(false)
     } else {
-      document.documentElement.classNameList.add('dark')
+      document.documentElement.classList.add('dark')
       setIsDarModeActive(true)
       // is use pass custom value for darmode use can use
       // document.querySelector(':root').style.setProperty('--darModeColor', customColorValue);
     }
   }
-
-  const handleChangeThemeColor = (colorCode) => {
+  const handleChangeThemeColor = (colorCode)=>{
     // use can also use user input value
     document.querySelector(':root').style.setProperty('--primary', colorCode);
 
   }
 
   return (
-    // <div classNameName={`w-full text-center text-primary m-4`}>
-    //   <h1>Theme Practice</h1>
-    //   <div classNameName="m-4 cursor-pointer" onClick={() => handleDarkModeSelection()}>{!isDarModeActive ? "Enable Dark Mode" : "Enable Light Mode"}</div>
-    //   <div>
-    //     <div>Change Theme Color</div>
-    //     <div>
-    //       <div classNameName="m-4 cursor-pointer" onClick={()=>handleChangeThemeColor("red")}>Red</div>
-    //       <div classNameName="m-4 cursor-pointer" onClick={()=>handleChangeThemeColor("green")}>green</div>
-    //       <div classNameName="m-4 cursor-pointer" onClick={()=>handleChangeThemeColor("yellow")}>yellow</div>
-    //       <div classNameName="m-4 cursor-pointer" onClick={()=>handleChangeThemeColor("orange")}>orange</div>
-    //     </div>
-    //   </div>
-    // </div>
     <div>
       <div className="flex flex-row w-full relative">
         <div className={classNames(openSidebar?"w-[300px]":"w-0", "transition-all h-screen")}>
@@ -87,7 +71,7 @@ function App() {
               <h1 onClick={()=>handleChangeThemeColor("yellow")}>Toogle Red Color</h1>
             </div>
           </header>
-          <main className="overflow-auto pt-16 pb-16 bg-gray-400 ">
+          <main className="text-primary overflow-auto pt-16 pb-16 bg-gray-400 ">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint modi non animi quod quos expedita libero
               voluptas enim, dolorum adipisci dicta provident eveniet laudantium maxime, omnis tempora recusandae
               officiis officia.
